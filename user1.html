@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat - User 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        onSnapshot,
+        query,
+        orderBy,
+      } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+      import {
+        getStorage,
+        ref,
+        uploadBytes,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js";
+
+      // Firebase Configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD4mDJE1_ugDxibuUUMV4UbTOX0pR7Twoo",
+        authDomain: "masseges-5892f.firebaseapp.com",
+        projectId: "masseges-5892f",
+        storageBucket: "masseges-5892f.appspot.com",
+        messagingSenderId: "1009540401808",
+        appId: "1:1009540401808:web:0e1d394ff0efd0534c6615",
+        measurementId: "G-FBLFN8BEG6",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const storage = getStorage(app);
+
+      // DOM Elements
+      const messagesContainer = document.getElementById("messages");
+      const messageInput = document.getElementById("messageInput");
+      const sendButton = document.getElementById("sendButton");
+      const imageInput = document.getElementById("imageInput");
+      const uploadImageButton = document.getElementById("uploadImageButton");
+
+      // Realtime Listener for Messages
+      const q = query(collection(db, "messages"), orderBy("timestamp", "asc"));
+      onSnapshot(q, (snapshot) => {
+        messagesContainer.innerHTML = "";
+        snapshot.forEach((doc) => {
+          const message = doc.data();
+          const messageElement = document.createElement("div");
+          const sender = message.sender === "User 1" ? "user1" : "user2";
+          messageElement.classList.add("message", sender);
+          if (message.text.includes("<img")) {
+            messageElement.innerHTML = `<div class="sender-name">${message.sender}</div>${message.text}`;
+          } else {
+            messageElement.innerHTML = `<div class="sender-name">${message.sender}</div><p>${message.text}</p>`;
+          }
+          messagesContainer.appendChild(messageElement);
+        });
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      });
+
+      // Send Text Message
+      async function sendMessage() {
+        const text = messageInput.value.trim();
+        if (text === "") return;
+        try {
+          await addDoc(collection(db, "messages"), {
+            text,
+            sender: "مرح",
+            timestamp: new Date(),
+          });
+          messageInput.value = "";
+        } catch (e) {
+          console.error("Error sending message: ", e);
+        }
+      }
+
+      sendButton.addEventListener("click", sendMessage);
+      messageInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
+      });
+
+      // Upload Image and Send
+      uploadImageButton.addEventListener("click", () => {
+        imageInput.click();
+      });
+
+      imageInput.addEventListener("change", async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const storageRef = ref(storage, `images/${Date.now()}_${file.name}`);
+        try {
+          const snapshot = await uploadBytes(storageRef, file);
+          const imageUrl = await getDownloadURL(snapshot.ref);
+
+          await addDoc(collection(db, "messages"), {
+            text: `<img src="${imageUrl}" alt="Sent Image" style="max-width: 100%; border-radius: 10px;" />`,
+            sender: "User 1",
+            timestamp: new Date(),
+          });
+        } catch (e) {
+          console.error("Error uploading image: ", e);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="chat-container">
+      <div id="messages"></div>
+      <div id="input-container">
+        <input type="text" id="messageInput" placeholder="Message!" />
+        <input
+          type="file"
+          id="imageInput"
+          accept="image/*"
+          style="display: none"
+        />
+        <button id="uploadImageButton">📷</button>
+        <button id="sendButton">Send</button>
+      </div>
+    </div>
+  </body>
+</html>
