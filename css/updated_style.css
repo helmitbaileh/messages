@@ -1,0 +1,168 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  font-family: 'Baloo Bhaijaan 2', 'Rubik', sans-serif;
+  font-weight: 400;
+  line-height: 28px;
+  color: #6a6a6a;
+  font-size: 14px;
+  background-color: #eff2f1;
+  text-align: right;
+  direction: rtl;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s all ease;
+  color: #2f2f2f;
+  text-decoration: underline;
+}
+a:hover {
+  color: #2f2f2f;
+  text-decoration: none;
+}
+a.more {
+  font-weight: 600;
+}
+
+.custom-navbar {
+  background: #3b5d50 !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.custom-navbar .navbar-brand {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: right;
+}
+.custom-navbar .navbar-brand > span {
+  opacity: 0.4;
+}
+.custom-navbar .navbar-toggler {
+  border-color: transparent;
+}
+.custom-navbar .navbar-toggler:active,
+.custom-navbar .navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+.custom-navbar .custom-navbar-nav li {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.custom-navbar .custom-navbar-nav li a {
+  font-weight: 500;
+  color: #ffffff !important;
+  opacity: 0.5;
+  transition: 0.3s all ease;
+  position: relative;
+}
+.custom-navbar .custom-navbar-nav li a:hover {
+  opacity: 1;
+}
+.custom-navbar .custom-navbar-cta {
+  margin-right: 40px !important;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.hero {
+  background: #3b5d50;
+  padding: calc(4rem - 30px) 0 4rem 0;
+  text-align: right;
+}
+.hero h1 {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+.hero p {
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 30px;
+}
+
+.btn {
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: #ffffff;
+  background: #2f2f2f;
+  border-color: #2f2f2f;
+}
+.btn:hover {
+  color: #ffffff;
+  background: #222222;
+  border-color: #222222;
+}
+.btn.btn-primary {
+  background: #3b5d50;
+  border-color: #3b5d50;
+}
+.btn.btn-primary:hover {
+  background: #314d43;
+  border-color: #314d43;
+}
+
+.section-title {
+  color: #2f2f2f;
+  text-align: right;
+}
+
+.product-section {
+  padding: 7rem 0;
+  text-align: right;
+}
+.product-section .product-item {
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding-bottom: 50px;
+  cursor: pointer;
+}
+.product-section .product-item h3 {
+  font-weight: 600;
+  font-size: 16px;
+}
+.product-section .product-item strong {
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+.product-section .product-item h3,
+.product-section .product-item strong {
+  color: #2f2f2f;
+  text-decoration: none;
+}
+
+.feature {
+  margin-bottom: 30px;
+  text-align: right;
+}
+.feature h3 {
+  font-size: 14px;
+  color: #2f2f2f;
+}
+.feature p {
+  font-size: 14px;
+  line-height: 22px;
+  color: #6a6a6a;
+}
+
+.we-help-section {
+  padding: 7rem 0;
+  text-align: right;
+}
+
+.footer {
+  background: #3b5d50;
+  color: white;
+  padding: 20px;
+  text-align: right;
+  direction: rtl;
+}
+
+</style>

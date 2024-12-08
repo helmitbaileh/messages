@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/tiny-slider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>
+      Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites
+      by Untree.co
+    </title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+    .product-image-section {
+      max-width: 300px;
+
+      margin-right: 20px;
+    }
+    .product-image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .product-details-section {
+      max-width: 400px;
+
+      text-align: right;
+    }
+    .product-details-section h1 {
+      margin-bottom: 10px;
+
+      font-size: 24px;
+      color: #333;
+    }
+    .product-details-section p {
+      margin-bottom: 20px;
+
+      color: #666;
+    }
+    .product-price {
+      font-size: 20px;
+      color: #4f46e5;
+      margin-bottom: 20px;
+    }
+    .quantity-section {
+      margin-bottom: 20px;
+    }
+    .btn-group {
+      margin-top: 20px;
+    }
+    .btn {
+      background-color: #4f46e5;
+      color: #ffffff;
+
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #3b3b9e;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      margin: 0;
+
+      padding: 0;
+    }
+
+    .cart-container {
+      width: 80%;
+      margin: 30px auto;
+
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 100px; /* Adjust this value as needed to clear the navbar */
+    }
+
+    .cart-page h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    #cart-items li {
+      padding: 10px;
+
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #cart-items li input[type="number"] {
+      width: 50px;
+      text-align: center;
+    }
+
+    .delete-btn {
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 30px;
+      color: #000000;
+    }
+
+    .cart-page p {
+      text-align: right;
+
+      font-size: 18px;
+    }
+
+    form {
+      margin-top: 20px;
+            text-align: right;
+
+    }
+
+    form label {
+      display: block;
+
+      margin-bottom: 5px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      font-weight: 600;
+      padding: 12px 30px;
+
+      border-radius: 30px;
+      color: #ffffff;
+      background: #2f2f2f;
+      border-color: #2f2f2f;
+    }
+
+    form button:hover {
+      background-color: #252525;
+    }
+  </style>
+  <body>
+    <!-- Start Header/Navigation -->
+    <nav
+      class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+      arial-label="Furni navigation bar"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="PalPlays Logo" style="height: 85px" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsFurni"
+          aria-controls="navbarsFurni"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+          <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الصفحة الرئيسية</a>
+            </li>
+            <li><a class="nav-link" href="shop.html">المتجر</a></li>
+            <li><a class="nav-link" href="about.html">من نحن</a></li>
+            <li><a class="nav-link" href="404.html">اخبار</a></li>
+          </ul>
+
+          <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+
+            <li>
+              <a class="nav-link" href="cart.html"
+                ><img src="images/cart.svg"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Header/Navigation -->
+    <div class="hero">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-5">
+            <div class="intro-excerpt">
+              <h1>عربة التسوق</h1>
+            </div>
+          </div>
+          <div class="col-lg-7"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-container cart-page">
+      <ul id="cart-items"></ul>
+      <p>المجموع: <span id="total-price">0</span> ₪</p>
+
+      <h2>تاكيد معلومات الطلب</h2>
+      <form id="checkoutForm">
+        <label for="name">:الاسم</label>
+        <input type="text" id="name" name="name" required /><br />
+
+        <label for="address">:العنوان</label>
+        <input type="text" id="address" name="address" required /><br />
+
+        <label for="phone">:رقم الهاتف</label>
+        <input type="text" id="phone" name="phone" required /><br />
+
+        <label for="email">:البريد الالكتروني</label>
+        <input type="email" id="email" name="email" required /><br />
+
+        <button type="submit">اتمام الطلب</button>
+      </form>
+    </div>
+    
+    <footer class="footer-section">
+      <div class="container relative">
+
+
+
+
+        <div class="row g-5 mb-5">
+          <div class="col-lg-4">
+            <div class="mb-4 footer-logo-wrap">
+              <a href="#" class="footer-logo">PalPlays<span>.</span></a>
+            </div>
+            <p class="mb-4">
+              Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
+              quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
+              vulputate velit imperdiet dolor tempor tristique. Pellentesque
+              habitant
+            </p>
+
+            <ul class="list-unstyled custom-social">
+              <li>
+                <a href="#"><span class="fa fa-brands fa-facebook-f"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-instagram"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-linkedin"></span></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="row links-wrap">
+              <div class="col-6 col-sm-6 col-md-3">
+                <ul class="list-unstyled">
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top copyright">
+          <div class="row pt-4">
+            <div class="col-lg-6">
+              <p class="mb-2 text-center text-lg-start">
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                . All Rights Reserved.
+              </p>
+            </div>
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="module">
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+      } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBL7MOIEE8K1UgZTG_j-6-VM0JzlD_7BS0",
+        authDomain: "ecomers-dd329.firebaseapp.com",
+        projectId: "ecomers-dd329",
+        storageBucket: "ecomers-dd329.appspot.com",
+        messagingSenderId: "190646144215",
+        appId: "1:190646144215:web:d55f24091a920f92b6b492",
+        measurementId: "G-NVYK3DZR00",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const cartItems = document.getElementById("cart-items");
+      const totalPriceElem = document.getElementById("total-price");
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      function renderCart() {
+        cartItems.innerHTML = "";
+        let totalPrice = 0;
+
+        cart.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            ${item.name} - ${item.price} NIS
+            <input type="number" value="${
+              item.quantity || 1
+            }" min="1" data-index="${index}" />
+            <button class="delete-btn" data-index="${index}">X</button>
+          `;
+          cartItems.appendChild(li);
+          totalPrice += item.price * (item.quantity || 1);
+        });
+
+        totalPriceElem.textContent = totalPrice;
+      }
+
+      renderCart();
+
+      cartItems.addEventListener("click", (e) => {
+        if (e.target.classList.contains("delete-btn")) {
+          const index = e.target.getAttribute("data-index");
+          cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCart();
+        }
+      });
+
+      cartItems.addEventListener("input", (e) => {
+        if (e.target.type === "number") {
+          const index = e.target.getAttribute("data-index");
+          const newQuantity = parseInt(e.target.value);
+          cart[index].quantity = newQuantity;
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCart();
+        }
+      });
+
+      document
+        .getElementById("checkoutForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const address = document.getElementById("address").value;
+          const phone = document.getElementById("phone").value;
+          const email = document.getElementById("email").value;
+          const note = document.getElementById("note").value;
+
+          try {
+            await addDoc(collection(db, "orders"), {
+              name: name,
+              address: address,
+              phone: phone,
+              email: email,
+              note: note,
+              items: cart,
+              totalPrice: parseFloat(totalPriceElem.textContent),
+              timestamp: new Date(),
+            });
+
+            localStorage.removeItem("cart");
+            alert("Order submitted successfully!");
+            renderCart();
+          } catch (error) {
+            console.error("Error submitting the order:", error);
+          }
+        });
+    </script>
+  </body>
+</html>
